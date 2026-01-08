@@ -8,11 +8,16 @@ def main():
 
     total = sum(scores)
     average = total / n
+    maximum = max(scores)
+    minimum = min(scores)
 
     print("Scores:", scores)
     print("Sum of scores:", total)
     print("Average score:", average)
+    print("Maximum score:", maximum)
+    print("Minimum score:", minimum)
 
 
 if __name__ == "__main__":
     main()
+
