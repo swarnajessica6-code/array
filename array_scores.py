@@ -1,23 +1,22 @@
-def main():
-    n = int(input("Enter number of scores: "))
-    scores = []
+import sys
 
-    for i in range(n):
-        score = float(input(f"Enter score {i+1}: "))
-        scores.append(score)
+def main():
+    if len(sys.argv) < 2:
+        print("Usage: python array_scores.py <scores>")
+        sys.exit(1)
+
+    scores = list(map(int, sys.argv[1:]))
 
     total = sum(scores)
-    average = total / n
+    average = total / len(scores)
     maximum = max(scores)
     minimum = min(scores)
 
     print("Scores:", scores)
-    print("Sum of scores:", total)
-    print("Average score:", average)
-    print("Maximum score:", maximum)
-    print("Minimum score:", minimum)
-
+    print("Sum:", total)
+    print("Average:", average)
+    print("Maximum:", maximum)
+    print("Minimum:", minimum)
 
 if __name__ == "__main__":
     main()
-
